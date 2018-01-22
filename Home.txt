@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-22T09:09:20+01:00
+
+====== Home ======
+Created poniedziałek 22 styczeń 2018
+
+tabele składają sie z pola i wierszy
+kolumny są to pola
+* pole zawiera danego tego samego typu np.liczby, tekst, 
+zawierają informacje tego samego typu
+* rekord = zbiór wszystkich pól w jedenj tabeli 
+
+język SQL - język zapytań stosowany w bazach danych
+
+====== Programy ======
+* Microsoft Access
+* Libre Office Bse
+* SQLiteStudio
+
+**Niespójność bazy danych** pojawia się wtedy gdy pojawia sie za dużo informacji robi się wtedy gdy pojawia sie za dużo informacji, robi sie niepotrzebny chaos, dlatego infromacje nie powinnny sie powtarzać relacyjna 
+**Baza danych-** składa sie z wielu tabel połączonych relacjami.
+
+====== Systemy/Silniki baz danych ======
+* MySQL
+* MariaDB
+* DB2
+* Informix Dynamic Server
+* Firebird
+* Microsoft SQL Server
+* Oracle
+* PostgreSQL
+
+
+Typy Danych
+Liczbowe
+integer - liczby całkowite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
