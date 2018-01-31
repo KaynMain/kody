@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-31T07:30:51+01:00
+
+====== Klient-Serwer ======
+Created środa 31 styczeń 2018
+
+**Serwer **-"komputer" udostępniający zasoby
+Jakie zasoby można udostępniać?
+Udostępnia USUŁUGI, czyli (ang.service)
+1.DNS-Domain Name System, zamiana nazw hostów na adresy IP, polecenie: **ping**
+2.HTTP - HyperText Transfer Protocol, komunikacja w zakresie WWW, port 80
+3.FTP - File Transfer Protocol
+4.SSH - Secure Shell, port 22 
+cache - pamięć podręczna
+
+**Klient** - "komputer" korzystający z usług udostępnianych przez serwer, np. przeglądarka WWW albo klient chat
+
+**Protokół **- "język" porozumiewania się klienta z serwerem, protokoły definiowane są w dokumentach RFC
+
+**Port** - well known services 0-1024
+
+Serwer HTTP
+python3 -m SimpleHTTPServer
+python3 -m http.server
+
+php -S localhost:8000
+
+Domyślny
+localhost:8000
+127.0.0.1:8000
+
+**Domyślny zasób:** index.thml, index.php, index
+
+Metody HTTP:
+**GET** - parametry przekazujemy po znaku zapytania 
+**Parametry** przekazujemy jako: //nazwa_parametru=wartosc//, do łączenia parametrów używamy znaku &
+**POST** - przesyłanie danych w sposób niejawny, np. z formularzy
+
+kod zajęć
+
+
+
+

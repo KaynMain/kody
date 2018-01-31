@@ -53,3 +53,4 @@ integer - liczby całkowite
 
 
 
+
