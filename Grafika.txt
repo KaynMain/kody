@@ -1,0 +1,66 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-19T09:03:47+01:00
+
+====== Grafika ======
+Created poniedziałek 19 marzec 2018
+
+Modele kolorów, zwane inaczej systemami zapisu kolorów, są różnorodnymi sposobami definiowania kolorów.
+
+Nazwa RGB składa się z początkowych liter wyrazów oznaczających trzy barwy podstawowe wykorzystywane.
+
+Kolor biały powstaje poprzez dodanie do siebie barw podstawowych.
+
+Biały (255, 255, 255) (0xFFFFFF)
+Czarny (0, 0, 0) (0x000000)
+0x-liczba szesnastkowa
+Wartość określa się w 0-255
+
+Cyjan (G+B)
+Magneta (R+B)
+Zółty (R+G)
+**C**(yjan)
+**M**(agneta)
+**Y**(ellow)
+(Blac**K**)
+
+W modelu CMYK kolor powstaje poprzez nakładanie barwników podstawowych w takich proporcjach.
+
+C +M=niebieski
+M+Y=czerwony
+Y+C=zielony
+
+Model HSB 
+Barwa (**H**ue)
+Nasycenie (**S**aturation)
+Jasność (**B**rightness) lub Wartość (**V**aule)
+
+Przestrzeń kolorów-wzajemny stosunek przestrzeni kolorów.
+Bitmapa
+PPM
+GIF
+PNG
+JPEG (JPG)
+XCF-format gimpera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
