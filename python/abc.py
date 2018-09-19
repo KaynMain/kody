@@ -6,7 +6,7 @@
 #  Program pobiera trzy liczby od użytkownika, a następnie wyświetla liczbę największą. 
 #
 
-def maks(a, b, c)
+def maks(a, b, c):
     m = None
     if a > b:
         if a > c:
@@ -16,16 +16,30 @@ def maks(a, b, c)
     print ("Największa: ", m)
     return m
     
+
+def maks2(a, b, c):
+    """
+    Funkcja wyszukuje i zwraca największą z trzecg podanych liczb
+    """
+    
+    m = a
+    if b > m:
+        m = b
+    if c > m:
+        m = c
+    return m
+    
+    
 def main(args):
-    assert(maks(3, 2, 1) == 3)
-    assert(maks(2, 3, 1) == 3)
-    assert(maks(1, 2, 3) == 3)
-    assert(maks(1, 1, 3) == 3)
-    assert(maks(3, 1, 1) == 3)
-    assert(maks(1, 3, 1) == 3)
-    assert(maks(1, 3, 3) == 3)
-    assert(maks(3, 3, 1) == 3)
-    assert(maks(3, 3, 1) == 3)
+    assert(maks2(3, 2, 1) == 3)
+    assert(maks2(2, 3, 1) == 3)
+    assert(maks2(1, 2, 3) == 3)
+    assert(maks2(1, 1, 3) == 3)
+    assert(maks2(3, 1, 1) == 3)
+    assert(maks2(1, 3, 1) == 3)
+    assert(maks2(1, 3, 3) == 3)
+    assert(maks2(3, 3, 1) == 3)
+    assert(maks2(3, 3, 3) == 3)
 
     
     return 0
