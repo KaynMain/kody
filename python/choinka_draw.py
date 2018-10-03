@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  prostokat_draw.py
-#  Dane wejściowe: boki a i b prostokąta
-#  Dane wyjściowe: prostokąt narywsowany w terminalu gwiazdkami o rozmiarach podancyh przez użytkownika 
+#  choinka_draw.py
+#  
+#  Copyright 2018  <>
 
 def main(args):
     a = int(input("Podaj długość boku a: "))
@@ -12,7 +12,10 @@ def main(args):
     
     for i in range(a):
         for j in range(b):
-            print(znak, end='')
+            if j > i and j < b:
+                print("", end='')
+            else:
+                print(znak, end='') 
         print()
     
     return 0
