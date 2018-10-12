@@ -1,40 +1,40 @@
 DROP TABLE IF EXISTS nazwiska;
 CREATE TABLE nazwiska (
-    Nr_ucz INTEGER PRIMARY KEY,
-    Nazwisko TEXT,
-    Imie1 TEXT, 
-    Imie2 TEXT
+    nr_ucznia INTEGER PRIMARY KEY,
+    nazwisko TEXT(30),
+    imie1 TEXT(15), 
+    imie2 TEXT(15)
 );
 
 DROP TABLE IF EXISTS dane_osbowe;
 CREATE TABLE dane_osbowe (
-    Nr_ucz.	INTEGER,
-    Dzien INTEGER,
-    Miesiac	INTEGER,
-    Rok	INTEGER,
-    M_urodzenia	TEXT,
-    Wojewodztwo TEXT,
-    FOREIGN KEY (Nr_ucz) REFERENCES dane_osbowe(Nr_ucz)
+    nr_ucznia.	INTEGER,
+    dzien INTEGER,
+    miesiac	INTEGER,
+    rok	INTEGER,
+    m_urodzenia	TEXT,
+    wojewodztwo TEXT,
+    FOREIGN KEY (nr_ucznia) REFERENCES nazwiska(nr_ucznia)
 );
 
 DROP TABLE IF EXISTS oceny;
 CREATE TABLE oceny (
-    Nr_ucz. INTEGER,
-    Zach. TEXT,
-    Rel_Ety INTEGER DEFAULT,
-    Jpol INTEGER DEFAULT,
-    Jang INTEGER DEFAULT,
-    Jniem INTEGER DEFAULT,
-    Mat INTEGER DEFAULT,
-    Hist INTEGER DEFAULT,
-    Geog INTEGER DEFAULT,
-    Biol INTEGER DEFAULT,
-    Fiz INTEGER DEFAULT,
-    Che INTEGER DEFAULT,
-    Tech INTEGER DEFAULT,
-    Info INTEGER DEFAULT,
-    Plas INTEGER DEFAULT,
-    PO INTEGER DEFAULT,
-    WF TEXT DEFAULT,
-    FOREIGN KEY (Nr_ucz) REFERENCES dane_osbowe(Nr_ucz)
+    nr_ucznia. INTEGER,
+    zach. TEXT(15),
+    rel_Ety DECIMAL DEFAULT NULL,
+    jpol DECIMAL DEFAULT NULL,
+    jang DECIMAL DEFAULT NULL,
+    jniem DECIMAL DEFAULT NULL,
+    mat DECIMAL DEFAULT NULL,
+    hist DECIMAL DEFAULT NULL,
+    geog DECIMAL DEFAULT NULL,
+    biol DECIMAL DEFAULT NULL,
+    fiz DECIMAL DEFAULT NULL,
+    che DECIMAL DEFAULT NULL,
+    tech DECIMAL DEFAULT NULL,
+    info DECIMAL DEFAULT NULL,
+    plas DECIMAL DEFAULT NULL,
+    po DECIMAL DEFAULT NULL,
+    wf DECIMAL DEFAULT NULL,
+    FOREIGN KEY (nr_ucznia) REFERENCES nazwiska(nr_ucznia)
 );
