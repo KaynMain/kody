@@ -4,13 +4,18 @@
 #  nwd_euklides.py
 
 def nwd_klasyczny(a, b):
-    
-    return nwd
+    while a != b:
+        if a > b:
+            a = a - b
+        else: 
+            b = b - a
+    return a
 
     
 def main(args):
-    
-    print(nwd_klasyczny(3, 190))
+    a = int(input("Liczba 1: "))
+    b = int(input("Liczba 2: "))
+    print(nwd_klasyczny(a, b))
     
     return 0
 
