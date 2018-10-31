@@ -1,22 +1,22 @@
 /*
  * znaki.cpp
- */
+*/
 
 
 #include <iostream>
 
 using namespace std;
 
-void licz_znaki(char tab[]) {
+void licz_znaki(char tab[]){
     int i = 0;
-    int biale = 0;
-    int inter = 0;
-    int licz = 0;
+    int biale, inter, licz;
+    biale = inter = licz = 0;
     while(tab[i] != '\0') {
-        //~if (tab[i] == ' ' || tab[i] == '\t')
-           //~biale++;
+        cout << tab[i] << " ";
+       //~ if (tab[i] == ' ' || tab[i] == '\t')
+          //~  biale++;
         //~else
-            //~cout << tab[i];
+           //~ cout << tab[i];
         switch (tab[i]) {
             case ' ': biale++; break;
             case '\t': biale++; break;
@@ -24,41 +24,47 @@ void licz_znaki(char tab[]) {
             case '.': inter++; break;
             default: licz++; break;
         }
-        i++; // zwiększenie indeksu
+        i++; 
     }
-    cout << "\nZnaków białych: " << biale << endl;
-    cout << "\nInterpunkcyjnych: " << inter << endl;
-    cout << "\nReszta: " << licz << endl;
+    cout << "\nZnaków białych: " << biale << endl; 
+    cout << "\nZnaków interpunkcyjnych: " << inter << endl;
+    cout << "\nReszta: " << licz << endl;   
 }
 
 void ascii(char tab[]) {
     int i = 0;
-        while(tab[i] != '\0') {
-            cout << (int)tab[i] << "";
-            i++;
+    while(tab[i] != '\0') {
+        cout << (int)tab[i] << " ";
+        i++;
     }
 }
 
-void zamiana_liter(char tab[]) {
+// A-Z ASC2 65-90, a-z ASC2 97- 122 ( zakresy dużych i małych liter)
+
+void zamiana_liter(char tab[]){
     int i = 0;
-        while(tab[i] != '\0') {
-            if (int)tab[i] < 97;
-            int)tab[i]
-            (char)(int)tab[i]
-            i++;
+    int z = 0;
+    while(tab[i] != '\0') {
+        z = (int)tab[i];
+        if (z >= 65 && z <= 90)
+            z = z + 32;  
+        else if (z >= 97 && z <= 122)
+            z = z - 32;
+         cout << (char)z;   
+        i++;
     }
+    
 }
 
-// A-Z ASCII 65-90, a-z ASCII 97-122
 int main(int argc, char **argv)
 {
-    const int rozmiar = 20; // deklaracja stałej
-	char znaki[20];  // deklaracja tablicy znakowej
+    const int rozmiar = 30; // deklaracja stałej
+    char znaki[rozmiar]; // deklaracja tablicy znakowej 
     cout << "Jak się nazywasz? ";
     cin.getline(znaki, rozmiar);
     cout << "Cześć " << znaki << endl;
     // licz_znaki(znaki);
-    ascii(znaki);
-    zamiana_liter(znaki);
+    // ascii(znaki);
+	zamiana_liter(znaki);
 	return 0;
 }
