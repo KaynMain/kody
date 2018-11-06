@@ -25,8 +25,10 @@ void wyswietl(char tekst[], int roz) {
     }
 }
 
-void anagram(char tb[], roz) {
-    for, który zanczyna od indeksu ostatniego znaku
+void anagram(char tb[], int roz) {
+    for(int i = roz - 1; i >= 0; i--) {
+        cout << tb[i];
+    }
 }
 
 int main(int argc, char **argv)
@@ -35,7 +37,10 @@ int main(int argc, char **argv)
     char tekst[roz]; 
     cout << "Podaj wyraz: ";
     cin.getline(tekst, roz);
-    wyswietl(tekst, zlicz(tekst));
+    wyswietl(tekst, cin.gcount());
+    cout << endl;
+    anagram(tekst, cin.gcount());
+    cout << endl;
 	return 0;
 }
 
