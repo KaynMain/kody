@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sqlite3
+import csv
+import os.path
+
+
+def dane_z_pliku(nazwa_pliku):
+    dane = [] # pusta lista na dane
+
+    if not os.path.isfile(nazwa_pliku, separator=','):
+        print("Plik {} nie istnieje!". format(nazwa_pliku))
+        return dane
+
+    with open(nazwa_pliku, 'r', newline='', encoding='utf-8') as plik:
+        tresc = csv.reader(plik, delimiter=separator)
+        for rekord in tresc:
+            rekord = [x.strip() for x in rekord] # oczyszczamy dane
+            dane.append(rekord) # dodawanie rekordów do listy
+    return dane
+
+def ile_kolumn(cur, tab):
+    """Funkcja zlicz liczbę kolumn(pól) w podanej tabeli """
+    i = 0
+    for kol in cur.execute("PRAGMA table_info('" + tab + "')"):
+        i += 1
+    return i
+
+def main(args):
+    baza_nazwa = 'pracownicy'
+    tabele = ['pracownicy', 'place', 'kontakty', 'stanowiska' ]
+    
+    con = sqlite3.connect(baza_nazwa + '.db') # połączenie z bazą
+    cur = con.cursor() # utworzenie kursora
+
+    # utworzenie tabeli w bazie
+    with open(baza_nazwa + '.sql', 'r') as plik:
+        cur.executescript(plik.read())
+    
+    for tab in tabele:
+        ile = ile_kolumn(cur, tab) # ile mamy pól w tabeli
+        dane = dane_z_pliku(tab + '.csv')
+        ile_d = len(dane[0])
+        if ile > ile_d: # primary key autoincrement 
+            dane2 = [] # tymczasowa lista na dane
+            for r in dane:
+                r.insert(0, None) # dodanie None na początku listu
+                dane2.append(r)
+            dane = dane2
+        ile_d += 1
+        pholders = ','.join(['?'] * ile_d)
+            
+        cur.executemany('INSERT INTO' + tab + 'VALUES(' + pholders + ')', dane)
+                
+    con.commit() # zatwierdzenie zmian w bazie
+    con.close() # zamknięcie połączenia z bazą
+    return 0
+
+
+if __name__ == '_main_':
+    import sys
+    sys.exit(main(sys.argv))
