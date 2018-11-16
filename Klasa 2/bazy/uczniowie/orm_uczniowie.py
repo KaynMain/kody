@@ -25,35 +25,27 @@ class Uczen(BazaModel):
     nazwisko = CharField(null=False)
     plec = BooleanField()
     klasa = ForeignKeyField(Klasa, related_name='uczniowie')
+    egzhum = FloatField(default = 0)
+    egzmat = FloatField(default = 0)
+    egzjez = FloatField(default = 0)
     
-class Wynik(BazaModel):
-    egzhum = FloatField(default=0)
-    egzmat = FloatField(default=0)
-    egzjez = FloatField(default=0)
-    uczen = ForeignKeyField(Uczen, related_name='wyniki')
+class Przedmiot(BazaModel):
+    przedmiot = CharField(null=False)
+    imie_naucz = CharField(null=False)
+    nazwisko_naucz = CharField(null=False)
+    plec_naucz = BooleanField()
+    
+class Ocena(BazaModel):
+    datad = DateField()
+    uczen = ForeignKeyField(Uczen, related_name='oceny')
+    przedmiot = ForeignKeyField(Przedmiot, related_name='oceny')
+    ocena = DecimalField(null=False)
     
 def main(args):
     if os.path.exists(baza_plik):
         os.remove(baza_plik)
     baza.connect() # połączenie z bazą
-    baza.create_tables([Klasa, Uczen, Wynik])
-    
-    kl2a = Klasa(nazwa="2A", roknaboru=2010, rokmatury=2013)
-    kl2a.save()
-    kl1a = Klasa(nazwa="1A", roknaboru=2009, rokmatury=2012)
-    kl1a.save()
-    
-    u1 = Uczen(imie="Jarosław", nazwisko="Mały", plec=False, klasa=kl2a)
-    u1.save()
-    u2 = Uczen(imie="Roman", nazwisko="Polek", plec=False, klasa=kl2a)
-    u2.save()
-    u3 = Uczen(imie="Anna", nazwisko="Gacek", plec=True, klasa=kl1a)
-    u3.save()
-    
-    uczniowie = Uczen.select()
-    for uczen in uczniowie:
-        print(uczen.id, uczen.nazwisko, uczen.klasa.nazwa)
-    
+    baza.create_tables([Klasa, Uczen, Przedmiot, Oceny])
     return 0
 
 if __name__ == '__main__':
