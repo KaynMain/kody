@@ -48,6 +48,9 @@ void sort_insert(int tab, int n) {
     cout << "\nSortowanie przez wstawianie";
     int i, j, tmp;
     for (i = 1; i <n; i++) { // pętla wybiera kolejne elementy zaczynając od drugiego
+        tmp = tab[i];
+        j = i -1; // 0
+        while ()
         
     }
 }
