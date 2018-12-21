@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 #
 #  modele.py
-
 from peewee import *
 
 baza_plik = 'quiz.db'
@@ -25,3 +24,4 @@ class Odpowiedz(BazaModel):
     odpowiedz = CharField(null=False)
     pytanie = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpok = IntegerField(default=0)
+    
