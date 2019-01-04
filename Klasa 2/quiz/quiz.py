@@ -3,13 +3,14 @@
 #
 #  quiz.py
 #  
+
 from flask import g
 from modele import *
 from views import *
 
 # konfiguracja aplikacji
 app.config.update(dict(
-    SECERT_KEY='rewqrewqrewqrewqreqewrqrewq',
+    SECRET_KEY='hausdfbfihfshfdksfoausrgfiuswhfhjhfdsfixbcvhfishfisfkshfsdfdisfdesrfewdshfbdsjbvdsbfbfdjfjh',
 ))
 
 @app.before_request

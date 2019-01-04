@@ -13,7 +13,7 @@ void silnia_re(int n) {
 int silnia_it(int n) {
     int silnia = 1;
     int i;
-    for (i = 1; i < n; i++)
+    for (i = 1; i <= n; i++)
         silnia = silnia * i;
     return silnia;
 }
