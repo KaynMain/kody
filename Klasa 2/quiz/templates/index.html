@@ -1,19 +1,8 @@
 {% extends "szablon.html" %}
+{% block tytul %}Quiz – pytania dla odważnych{% endblock %}
+{% block h1 %}Quiz – pytania dla odważnych{% endblock %}
 
-<title>Quiz - pytania dla kozaków</title>
-
-<meta name="generator" content="Geany 1.32" />
-<style type="text/css">
-    #menu li { display: inline; }
-    .info {color: blue;}
-</style>
-
-</head>
-
-<body>
-    
-    <h1>Pytania dla odważnych</h1>
-    
+{% block tresc %}
     <div id="komunikaty">
         {% with komunikaty = get_flashed_messages(with_categories=true) %}
         {% if komunikaty %}
@@ -23,6 +12,4 @@
         {% endif %}
         {% endwith %}
     </div>
-</body>
-
-</html>
+{% endblock %}
