@@ -3,7 +3,6 @@
 #
 #  quiz.py
 #  
-
 from flask import g
 from modele import *
 from views import *
